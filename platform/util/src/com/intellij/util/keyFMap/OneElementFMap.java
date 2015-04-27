@@ -46,6 +46,18 @@ public class OneElementFMap<V> implements KeyFMap {
     return myKey == key ? (V)myValue : null;
   }
 
+  @NotNull
+  @Override
+  public int[] getKeys() {
+    return new int[] { myKey.hashCode() };
+  }
+
+  @NotNull
+  @Override
+  public Object[] getValues() {
+    return new Object[] { myValue };
+  }
+
   @Override
   public String toString() {
     return "<" + myKey + " -> " + myValue+">";

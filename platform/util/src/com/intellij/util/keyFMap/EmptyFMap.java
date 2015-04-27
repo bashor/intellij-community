@@ -19,6 +19,9 @@ import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NotNull;
 
 class EmptyFMap implements KeyFMap {
+  private static final int[] EMPTY_KEYS_ARRAY = {};
+  private static final Object[] EMPTY_OBJECTS_ARRAY = {};
+
   EmptyFMap() {
   }
 
@@ -37,6 +40,18 @@ class EmptyFMap implements KeyFMap {
   @Override
   public <V> V get(@NotNull Key<V> key) {
     return null;
+  }
+
+  @NotNull
+  @Override
+  public int[] getKeys() {
+    return EMPTY_KEYS_ARRAY;
+  }
+
+  @NotNull
+  @Override
+  public Object[] getValues() {
+    return EMPTY_OBJECTS_ARRAY;
   }
 
   @Override

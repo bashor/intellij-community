@@ -135,10 +135,14 @@ public class ArrayBackedFMap implements KeyFMap {
     return false;
   }
 
+  @NotNull
+  @Override
   public int[] getKeys() {
     return keys;
   }
 
+  @NotNull
+  @Override
   public Object[] getValues() {
     return values;
   }

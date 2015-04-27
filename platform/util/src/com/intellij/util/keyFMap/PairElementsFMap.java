@@ -54,6 +54,18 @@ public class PairElementsFMap implements KeyFMap {
     return key == key1 ? (V)value1 : key == key2 ? (V)value2 : null;
   }
 
+  @NotNull
+  @Override
+  public int[] getKeys() {
+    return new int[] { key1.hashCode(), key2.hashCode() };
+  }
+
+  @NotNull
+  @Override
+  public Object[] getValues() {
+    return new Object[] { value1, value2 };
+  }
+
   @Override
   public String toString() {
     return "Pair: (" + key1 + " -> " + value1 + "; " + key2 + " -> " + value2 + ")";

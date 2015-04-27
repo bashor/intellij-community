@@ -86,6 +86,18 @@ class MapBackedFMap extends TIntObjectHashMap<Object> implements KeyFMap {
     return (V)get(key.hashCode());
   }
 
+  @NotNull
+  @Override
+  public int[] getKeys() {
+    return keys();
+  }
+
+  @NotNull
+  @Override
+  public Object[] getValues() {
+    return super.getValues();
+  }
+
   @Override
   public String toString() {
     final StringBuilder s = new StringBuilder();
