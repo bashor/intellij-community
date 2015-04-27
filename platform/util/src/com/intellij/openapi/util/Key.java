@@ -106,6 +106,17 @@ public class Key<T> {
     return (Key<T>)allKeys.get(index);
   }
 
+  @NotNull
+  public static Key[] getKeysByIndices(int[] indexes) {
+    Key[] result = new Key[indexes.length];
+
+    for (int i =0; i < indexes.length; i++) {
+      result[i] = getKeyByIndex(indexes[i]);
+    }
+
+    return result;
+  }
+
   /**
    * @deprecated access to Key via its name is a kind of hack, use Key instance directly instead
    */
